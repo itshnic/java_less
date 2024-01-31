@@ -15,7 +15,9 @@ public class Printer{
             PARAMS = args[1];
         }
 
-        Answer ans = new Answer();
+        Answer ans[] = new Answer();
+        for(char i: ans)
+
         System.out.println(ans.answer(QUERY, PARAMS));
     }
 }
