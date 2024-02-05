@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c72b2c9b-8aae-45a2-8e7e-c8a29867830d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessAutotest2_1/Answer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessAutotest2_2/BubbleSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessAutotest2_2/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessStart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lessStart/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessTwoAutotest/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessTwoAutotest/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessTwoAutotest/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessTwoAutotest/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessTwoAutotest/Answer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessTwoAutotest/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessAutotest2_1/Printer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,26 +38,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Printer.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Users/Пользователь/Desktop/GeekBR/SERVER/OSPanel/domains/lessons/java_less",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/Users/Пользователь/Desktop/GeekBR/SERVER/OSPanel/domains/lessons/java_less/untitled/src/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Printer.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Users/Пользователь/Desktop/GeekBR/SERVER/OSPanel/domains/lessons/java_less&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Users/Пользователь/Desktop/GeekBR/SERVER/OSPanel/domains/lessons/java_less/untitled/src/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.lessAutotest2_2" />
       <recent name="org.example.lessTwoAutotest" />
     </key>
   </component>

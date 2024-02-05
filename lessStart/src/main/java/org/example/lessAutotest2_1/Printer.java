@@ -1,4 +1,4 @@
-package org.example.lessTwoAutotest;
+package org.example.lessAutotest2_1;
 
 public class Printer{
     public static void main(String[] args) {
