@@ -7,25 +7,26 @@ import java.util.Date;
 public class HW_2 {
 
     public static void sort(int[] mas) {
-        try {
-            //BufferedWriter log = new BufferedWriter(new FileWriter("log1.txt"));
-            FileWriter log = new FileWriter("log.txt",true);
-            DateFormat dateFormat = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
+        try (FileWriter log = new FileWriter("log.txt")) {
+            //BufferedWriter Bulog = new BufferedWriter(log);
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
             Date date = new Date();
-            int number = 0;
-            for (int i = 0; i < mas.length - 1; i++) {
-                for (int j = 0; j < mas.length - 1; j++) {
-                    if (mas[j] > mas[j + 1]) {
-                        number = mas[j];
-                        mas[j] = mas[j + 1];
-                        mas[j + 1] = number;
-                        //log.write(dateFormat.format(date)+" "+Arrays.toString(mas));
-                        log.write(Arrays.toString(mas));
-
-                        System.out.println(dateFormat.format(date)+" "+Arrays.toString(mas));
+            for (int i = 0; i < mas.length; i++) {
+                int min = mas[i];
+                int minId = i;
+                for (int j = i + 1; j < mas.length; j++) {
+                    if (mas[j] < min) {
+                        min = mas[j];
+                        minId = j;
                     }
-
                 }
+                int big = mas[i];
+                mas[i]=min;
+                mas[minId]=big;
+                log.write(dateFormat.format(date)
+                        + " "
+                        + Arrays.toString(mas)
+                        + System.getProperty("line.separator"));
             }
         } catch (IOException e) {
             System.out.println("Error");
@@ -36,7 +37,7 @@ public class HW_2 {
 
     // Не удаляйте этот класс - он нужен для вывода результатов на экран и проверки
 
-    public static void main(String[] args) {
+    public static void main(@org.jetbrains.annotations.NotNull String[] args) {
         int[] arr = {};
 
         if (args.length == 0) {
@@ -48,9 +49,7 @@ public class HW_2 {
                     .toArray();
         }
 
-
         sort(arr);
-
         try (BufferedReader br = new BufferedReader(new FileReader("log.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
