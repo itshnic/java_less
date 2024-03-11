@@ -25,10 +25,10 @@ class PhoneBook {
     public static LinkedHashMap<String, ArrayList<Integer>> getPhoneBook() {
         Map<String, Integer> sortPhoneBook = new TreeMap<>();
         LinkedHashMap<String, ArrayList<Integer>> reversePhoneBook = new LinkedHashMap<>();
-        for (var item : phoneBook.entrySet()) {
-            sortPhoneBook.put(item.getKey(), item.getValue().size());
-        }
-        sortPhoneBook.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+        phoneBook.forEach((key, value) -> sortPhoneBook.put(key, value.size()));
+        sortPhoneBook.entrySet()
+                .stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
                 .forEach(e -> reversePhoneBook.put(e.getKey(), phoneBook.get(e.getKey())));
         return reversePhoneBook;
     }
