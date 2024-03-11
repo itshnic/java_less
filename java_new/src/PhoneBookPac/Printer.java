@@ -1,10 +1,8 @@
+package PhoneBookPac;
 import java.util.*;
-
-import static java.util.Map.Entry.comparingByValue;
 
 class PhoneBook {
     private static HashMap<String, ArrayList<Integer>> phoneBook = new HashMap<>();
-
     public void add(String name, Integer phoneNum) {
         String nameFormat = name.toUpperCase();
         if (phoneBook.containsKey(nameFormat)) {
@@ -14,7 +12,6 @@ class PhoneBook {
             number.add(phoneNum);
             phoneBook.put(nameFormat, number);
         }
-
     }
 
     public ArrayList<Integer> find(String name) {
@@ -25,14 +22,17 @@ class PhoneBook {
         return new ArrayList<Integer>();
     }
 
-    public static HashMap<String, ArrayList<Integer>> getPhoneBook() {
-        phoneBook.entrySet().stream().sorted(Map.Entry.<Integer,ArrayList<Integer>>comparingByValue().reversed())
-                .forEach(System.out::println);
-
-        return phoneBook;
+    public static LinkedHashMap<String, ArrayList<Integer>> getPhoneBook() {
+        Map<String, Integer> sortPhoneBook = new TreeMap<>();
+        LinkedHashMap<String, ArrayList<Integer>> reversePhoneBook = new LinkedHashMap<>();
+        for (var item : phoneBook.entrySet()) {
+            sortPhoneBook.put(item.getKey(), item.getValue().size());
+        }
+        sortPhoneBook.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .forEach(e -> reversePhoneBook.put(e.getKey(), phoneBook.get(e.getKey())));
+        return reversePhoneBook;
     }
 }
-
 
 public class Printer {
     public static void main(String[] args) {
@@ -42,8 +42,8 @@ public class Printer {
         int phone1;
         int phone2;
         int phone3 = 0;
-        int phone4= 0;
-        int phone5= 0;
+        int phone4 = 0;
+        int phone5 = 0;
 
         if (args.length == 0) {
             name1 = "Ivanov";
