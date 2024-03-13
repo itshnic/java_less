@@ -4,7 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c72b2c9b-8aae-45a2-8e7e-c8a29867830d" name="Changes" comment="" />
+    <list default="true" id="c72b2c9b-8aae-45a2-8e7e-c8a29867830d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/Game_HW.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/src/Game_HW/Character/Character.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/src/Game_HW/Character/Crossbowman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/src/Game_HW/Character/Monk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/src/Game_HW/Character/Peasant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/src/Game_HW/Character/Robber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/src/Game_HW/Character/Sniper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/src/Game_HW/Character/Sorcerer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/src/Game_HW/Character/Spearman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game_HW/src/Game_HW/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Game_HW/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Game_HW/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessAutotest2_1/Answer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessAutotest2_1/Printer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessTwo/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessTwo_1/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessStart/src/main/java/org/example/lessTwo_1/Vector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/less_1.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +68,7 @@
     "Application.Unnamed.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Пользователь/Desktop/GeekBR/PHP/phpLesson/OpenServer/domains/java_less/java_new",
