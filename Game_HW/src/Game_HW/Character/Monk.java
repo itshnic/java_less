@@ -1,4 +1,13 @@
 package Game_HW.Character;
 
-public class Monk {
+/**
+ * Монах
+ * Sword - меч
+ */
+public class Monk extends Character {
+    public Monk( int age, String name) {
+        super(30, 90, 100,
+                80, 30, 80,
+                "Sword", age, name);
+    }
 }
