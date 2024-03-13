@@ -1,4 +1,4 @@
-package PhoneBookPac;
+package org.example.lessAutotest2_1.PhoneBookPac;
 import java.util.*;
 
 class PhoneBook {
