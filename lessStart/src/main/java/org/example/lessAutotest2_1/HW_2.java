@@ -1,3 +1,5 @@
+package org.example.lessAutotest2_1;
+
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -37,7 +39,7 @@ public class HW_2 {
 
     // Не удаляйте этот класс - он нужен для вывода результатов на экран и проверки
 
-    public static void main(@org.jetbrains.annotations.NotNull String[] args) {
+    public static void main(String[] args) {
         int[] arr = {};
 
         if (args.length == 0) {
