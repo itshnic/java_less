@@ -1,4 +1,4 @@
-package Game_HW.Character;
+package Game_HW.Person;
 
 /**
  * Монах

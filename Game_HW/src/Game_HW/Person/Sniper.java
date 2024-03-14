@@ -1,4 +1,4 @@
-package Game_HW.Character;
+package Game_HW.Person;
 
 /**
  * Снайпер
@@ -6,7 +6,7 @@ package Game_HW.Character;
  */
 public class Sniper extends Character {
     public Sniper( int age, String name) {
-        super(80, 80, 50,
+        super(22, 80, 50,
                 80, 50, 40,
                 "rifle", age, name);
     }

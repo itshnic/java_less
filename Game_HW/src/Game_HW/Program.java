@@ -1,8 +1,6 @@
 package Game_HW;
 
-import Game_HW.Character.*;
-
-import java.util.ArrayList;
+import Game_HW.Person.*;
 
 public class Program {
     public static void main(String[] args) {
@@ -13,6 +11,7 @@ public class Program {
         Sniper sniper = new Sniper(29, "Саша");
         Sorcerer sorcerer = new Sorcerer(40, "Роман");
         Spearman spearman = new Spearman(20, "Игорь");
+        System.out.println(sniper.toString());
         sniper.attack(robber);
         peasant.hail(crossbowman);
     }
