@@ -4,7 +4,7 @@ package Game_HW.Person;
  * Копейщик
  * Spear - копье
  */
-public class Spearman extends Character {
+public class Spearman extends Person {
     public Spearman( int age, String name) {
         super(12, 60, 50,
                 50, 45, 25,

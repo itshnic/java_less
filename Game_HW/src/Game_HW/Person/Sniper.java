@@ -4,7 +4,7 @@ package Game_HW.Person;
  * Снайпер
  * rifle - винтовка
  */
-public class Sniper extends Character {
+public class Sniper extends Person {
     public Sniper( int age, String name) {
         super(22, 80, 50,
                 80, 50, 40,

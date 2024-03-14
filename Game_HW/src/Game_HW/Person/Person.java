@@ -16,7 +16,7 @@ package Game_HW.Person;
  * hail() - лечение
  * defense() - защита
  */
-abstract class Character {
+abstract class Person {
     protected int power;
     protected int skill;
     protected int endurance;
@@ -28,7 +28,7 @@ abstract class Character {
     protected int age;
     protected String name;
 
-    public Character(
+    public Person(
             int power,
             int skill,
             int endurance,
@@ -52,25 +52,26 @@ abstract class Character {
     public String toString(){
         return this.getClass().getSimpleName()+" Имя игрока "+this.name+" /возраст "+this.age+" лет";
     }
-    public  void attack(Character character){
-        int lightBlow =(int) (this.power-this.power*defense(character));
-        int charHealht = character.health;
-        character.health-=lightBlow;
-        System.out.println(this.getClass().getSimpleName()+" атакует "+character.getClass().getSimpleName()+" нанесен урон -> " + (charHealht-character.health));
+    public  void attack(Person person){
+        System.out.println(this.toString());
+        int lightBlow =(int) (this.power-this.power*defense(person));
+        int charHealht = person.health;
+        person.health-=lightBlow;
+        System.out.println(this.getClass().getSimpleName()+" атакует "+person.getClass().getSimpleName()+" нанесен урон -> " + (charHealht-person.health));
     }
-    public void hail(Character character){
+    public void hail(Person person){
         if(this.mana>=10){
-            character.health+=(int)(this.mana*0.1);
+            person.health+=(int)(this.mana*0.1);
             this.mana-=(int)(this.mana*0.1);
-            System.out.println(this.getClass().getSimpleName()+" вылечил -> "+ character.getClass().getSimpleName());
-            System.out.println("Запас здоровья "+character.getClass().getSimpleName() + " -> " + character.health);
+            System.out.println(this.getClass().getSimpleName()+" вылечил -> "+ person.getClass().getSimpleName());
+            System.out.println("Запас здоровья "+ person.getClass().getSimpleName() + " -> " + person.health);
             System.out.println(this.getClass().getSimpleName()+" осталось Mana -> "+this.mana);
         }
         else System.out.println(this.getClass().getSimpleName()+" Лечить нельзя Mana -> "+this.mana);
 
     }
-    public double defense(Character character){
-        return (double) (character.skill + character.endurance + character.armor) /1000;
+    public double defense(Person person){
+        return (double) (person.skill + person.endurance + person.armor) /1000;
     }
 
 }
