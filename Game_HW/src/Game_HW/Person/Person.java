@@ -16,7 +16,7 @@ package Game_HW.Person;
  * hail() - лечение
  * defense() - защита
  */
-abstract class Person {
+public abstract class Person {
     protected int power;
     protected int skill;
     protected int endurance;
@@ -27,6 +27,8 @@ abstract class Person {
     protected String weapon;
     protected int age;
     protected String name;
+    protected int positionX;
+    protected int positionY;
 
     public Person(
             int power,
@@ -37,7 +39,7 @@ abstract class Person {
             int mana,
             String weapon,
             int age,
-            String name) {
+            String name,int positionX,int positionY) {
         this.power = power;
         this.skill = skill;
         this.endurance = endurance;
@@ -48,9 +50,21 @@ abstract class Person {
         this.weapon = weapon;
         this.age = age;
         this.name = name;
+        this.positionX=positionX;
+        this.positionY=positionY;
     }
     public String toString(){
-        return this.getClass().getSimpleName()+" Имя игрока "+this.name+" /возраст "+this.age+" лет";
+        return this.getClass().getSimpleName()
+                +" Имя игрока "
+                +this.name
+                +" /возраст "
+                +this.age
+                +" лет "
+                +"( "
+                +this.positionX
+                +":"
+                +this.positionY
+                +" )";
     }
     public  void attack(Person person){
         System.out.println(this.toString());
