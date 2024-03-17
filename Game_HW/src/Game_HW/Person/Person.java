@@ -1,5 +1,7 @@
 package Game_HW.Person;
 
+import java.util.ArrayList;
+
 /**
  * Шкала от 0 до 100
  * power - сила атаки
@@ -39,7 +41,7 @@ public abstract class Person {
             int mana,
             String weapon,
             int age,
-            String name,int positionX,int positionY) {
+            String name, int positionX, int positionY) {
         this.power = power;
         this.skill = skill;
         this.endurance = endurance;
@@ -50,42 +52,52 @@ public abstract class Person {
         this.weapon = weapon;
         this.age = age;
         this.name = name;
-        this.positionX=positionX;
-        this.positionY=positionY;
+        this.positionX = positionX;
+        this.positionY = positionY;
     }
-    public String toString(){
+
+    public String toString() {
         return this.getClass().getSimpleName()
-                +" Имя игрока "
-                +this.name
-                +" /возраст "
-                +this.age
-                +" лет "
-                +"( "
-                +this.positionX
-                +":"
-                +this.positionY
-                +" )";
+                + " --> "
+                + this.name
+                + " возраст "
+                + this.age
+                + " /"
+                + "Позиция X="
+                + this.positionX
+                + " Y="
+                + this.positionY;
     }
-    public  void attack(Person person){
-        System.out.println(this.toString());
-        int lightBlow =(int) (this.power-this.power*defense(person));
+
+    public void attack(Person person) {
+        int lightBlow = (int) (this.power - this.power * defense(person));
         int charHealht = person.health;
-        person.health-=lightBlow;
-        System.out.println(this.getClass().getSimpleName()+" атакует "+person.getClass().getSimpleName()+" нанесен урон -> " + (charHealht-person.health));
-    }
-    public void hail(Person person){
-        if(this.mana>=10){
-            person.health+=(int)(this.mana*0.1);
-            this.mana-=(int)(this.mana*0.1);
-            System.out.println(this.getClass().getSimpleName()+" вылечил -> "+ person.getClass().getSimpleName());
-            System.out.println("Запас здоровья "+ person.getClass().getSimpleName() + " -> " + person.health);
-            System.out.println(this.getClass().getSimpleName()+" осталось Mana -> "+this.mana);
-        }
-        else System.out.println(this.getClass().getSimpleName()+" Лечить нельзя Mana -> "+this.mana);
-
-    }
-    public double defense(Person person){
-        return (double) (person.skill + person.endurance + person.armor) /1000;
+        person.health -= lightBlow;
+        System.out.println(this.getClass().getSimpleName() + " атакует " + person.getClass().getSimpleName() + " нанесен урон -> " + (charHealht - person.health));
     }
 
+    public void hail(Person person) {
+        if (this.mana >= 10) {
+            person.health += (int) (this.mana * 0.1);
+            this.mana -= (int) (this.mana * 0.1);
+            System.out.println(this.getClass().getSimpleName() + " вылечил -> " + person.getClass().getSimpleName());
+            System.out.println("Запас здоровья " + person.getClass().getSimpleName() + " -> " + person.health);
+            System.out.println(this.getClass().getSimpleName() + " осталось Mana -> " + this.mana);
+        } else System.out.println(this.getClass().getSimpleName() + " Лечить нельзя Mana -> " + this.mana);
+
+    }
+
+    public double defense(Person person) {
+        return (double) (person.skill + person.endurance + person.armor) / 1000;
+    }
+
+
+
+    public int getPositionX() {
+        return positionX;
+    }
+
+    public int getPositionY() {
+        return positionY;
+    }
 }

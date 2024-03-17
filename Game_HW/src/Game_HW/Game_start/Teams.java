@@ -3,35 +3,37 @@ package Game_HW.Game_start;
 import Game_HW.Person.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Random;
 
 
 public class Teams {
     public ArrayList<Person> createTeam(int countUser, int step, int positionY) {
         ArrayList<Person> team = new ArrayList<>();
-        for (int i = 0; i <= countUser; i++) {
-            //System.out.println((int) (new Random().nextInt(4)+step));
+        for (int i = 0; i < countUser; i++) {
+            var gamer = Names.values()[new Random().nextInt(Names.values().length)];
             switch (new Random().nextInt(4)+step) {
                 case 0:
-                    team.add(new Monk(30, "Сергей",i,positionY));
+                    team.add(new Monk(gamer.age, gamer.name,i,positionY));
                     break;
                 case 1:
-                    team.add(new Crossbowman(30, "Владимир",i,positionY));
+                    team.add(new Crossbowman(gamer.age, gamer.name,i,positionY));
                     break;
                 case 2:
-                    team.add(new Robber(33, "Виктор",i,positionY));
+                    team.add(new Robber(gamer.age, gamer.name,i,positionY));
                     break;
                 case 3:
-                    team.add(new Peasant(34, "Инна",i,positionY));
+                    team.add(new Peasant(gamer.age, gamer.name,i,positionY));
                     break;
                 case 4:
-                    team.add(new Sniper(29, "Саша",i,positionY));
+                    team.add(new Sniper(gamer.age, gamer.name,i,positionY));
                     break;
                 case 5:
-                    team.add(new Sorcerer(40, "Роман",i,positionY));
+                    team.add(new Sorcerer(gamer.age, gamer.name,i,positionY));
                     break;
                 case 6:
-                    team.add(new Spearman(20, "Игорь",i,positionY));
+                    team.add(new Spearman(gamer.age, gamer.name,i,positionY));
                     break;
             }
         }
