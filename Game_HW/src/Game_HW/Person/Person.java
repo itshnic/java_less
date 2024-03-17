@@ -1,6 +1,9 @@
 package Game_HW.Person;
 
+import Game_HW.Game_start.PersonMethod;
+
 import java.util.ArrayList;
+
 
 /**
  * Шкала от 0 до 100
@@ -18,7 +21,7 @@ import java.util.ArrayList;
  * hail() - лечение
  * defense() - защита
  */
-public abstract class Person {
+public abstract class Person implements PersonMethod {
     protected int power;
     protected int skill;
     protected int endurance;
@@ -60,9 +63,11 @@ public abstract class Person {
         return this.getClass().getSimpleName()
                 + " --> "
                 + this.name
-                + " возраст "
-                + this.age
                 + " /"
+                + this.age
+                + " лет /"
+                +this.health
+                + " жизнь /"
                 + "Позиция X="
                 + this.positionX
                 + " Y="
@@ -91,11 +96,25 @@ public abstract class Person {
         return (double) (person.skill + person.endurance + person.armor) / 1000;
     }
 
+    public Person searchOpponent(ArrayList <Person> team) {
+        double minDistance=Math.sqrt(
+                (Math.pow((this.getPositionX()-team.getFirst().getPositionX()),2))
+                        + (Math.pow((this.getPositionY()-team.getFirst().getPositionY()),2)));
+        Person opponent=team.getFirst();
 
-
-    public int getPositionX() {
-        return positionX;
+        for (int i=1;i<team.size();i++) {
+            double distance = Math.sqrt(
+                    (Math.pow((this.getPositionX() -team.get(i).getPositionX()),2))
+                            + (Math.pow((this.getPositionY() - team.get(i).getPositionY()),2)));
+            if(minDistance>distance){
+                minDistance=distance;
+                opponent=team.get(i);
+            }
+        }
+        return opponent;
     }
+
+    public int getPositionX() {return positionX;}
 
     public int getPositionY() {
         return positionY;

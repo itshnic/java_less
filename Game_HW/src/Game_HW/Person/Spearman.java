@@ -1,5 +1,7 @@
 package Game_HW.Person;
 
+import java.util.ArrayList;
+
 /**
  * Копейщик
  * Spear - копье
@@ -9,5 +11,10 @@ public class Spearman extends Person {
         super(12, 60, 50,
                 50, 45, 25,
                 "Spear", age, name,positionX,positionY);
+    }
+
+    @Override
+    public void step(ArrayList<Person> team) {
+
     }
 }

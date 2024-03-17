@@ -1,5 +1,7 @@
 package Game_HW.Person;
 
+import java.util.ArrayList;
+
 /**
  * Грабитель
  * musket - мушкет
@@ -9,5 +11,10 @@ public class Robber extends Person {
         super(17, 50, 50,
                 50, 10, 15,
                 "musket", age, name,positionX,positionY);
+    }
+
+    @Override
+    public void step(ArrayList<Person> team) {
+
     }
 }
