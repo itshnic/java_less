@@ -5,5 +5,5 @@ import Game_HW.Person.Person;
 import java.util.ArrayList;
 
 public interface PersonMethod {
-    public void step(ArrayList<Person> team);
+    public Person step(ArrayList<Person> team);
 }

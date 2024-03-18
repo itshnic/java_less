@@ -7,14 +7,18 @@ import java.util.ArrayList;
  * musket - мушкет
  */
 public class Robber extends Person {
-    public Robber( int age, String name,int positionX,int positionY) {
+    public Robber( int age,
+                   String name,
+                   int positionX,
+                   int positionY) {
         super(17, 50, 50,
                 50, 10, 15,
-                "musket", age, name,positionX,positionY);
+                "musket", age, name,2,
+                positionX,positionY);
     }
 
     @Override
-    public void step(ArrayList<Person> team) {
-
+    public Person step(ArrayList<Person> team) {
+        return null;
     }
 }

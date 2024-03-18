@@ -8,14 +8,18 @@ import java.util.ArrayList;
  * pitchfork - вилы
  */
 public class Peasant extends Person {
-    public Peasant( int age, String name,int positionX,int positionY) {
+    public Peasant( int age,
+                    String name,
+                    int positionX,
+                    int positionY) {
         super(5, 50, 50,
                 40, 10, 15,
-                "Pitchfork", age, name,positionX,positionY);
+                "Pitchfork", age, name, 0,
+                positionX,positionY);
     }
 
     @Override
-    public void step(ArrayList<Person> team) {
-
+    public Person step(ArrayList<Person> team) {
+        return null;
     }
 }

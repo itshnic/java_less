@@ -7,14 +7,18 @@ import java.util.ArrayList;
  * rifle - винтовка
  */
 public class Sniper extends Person {
-    public Sniper( int age, String name,int positionX,int positionY) {
+    public Sniper( int age,
+                   String name,
+                   int positionX,
+                   int positionY) {
         super(22, 80, 50,
                 80, 50, 40,
-                "rifle", age, name,positionX,positionY);
+                "rifle", age, name,3,
+                positionX,positionY);
     }
 
     @Override
-    public void step(ArrayList<Person> team) {
-
+    public Person step(ArrayList<Person> team) {
+        return null;
     }
 }

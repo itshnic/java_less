@@ -20,16 +20,20 @@ public class Program {
         whiteTeam.forEach(System.out::println);
         System.out.println();
 
-        Search search = new Search();
-        Person gamer = search.searchPerson(blackTeam, "Crossbowman");
-        gamer.step(whiteTeam);
+//        Search search = new Search();
+//        Person gamer = search.searchPerson(blackTeam, "Crossbowman");
+//        Person opponent = gamer.step(whiteTeam);
 
-        System.out.println("Команда whiteTeam");
-        whiteTeam.forEach(System.out::println);
-        System.out.println();
+//        System.out.println(gamer);
+//        System.out.println();
+//
+//        System.out.println(opponent);
+//        System.out.println();
 
-        System.out.println("Команда blackTeam");
-        blackTeam.forEach(System.out::println);
-        System.out.println();
+        ArrayList<Person> allGamers = new ArrayList<>();
+        allGamers.addAll(blackTeam);
+        allGamers.addAll(whiteTeam);
+        allGamers.sort(((o1, o2) -> o2.speed- o1.speed));
+        allGamers.forEach(System.out::println);
     }
 }

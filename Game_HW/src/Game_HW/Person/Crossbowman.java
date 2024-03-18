@@ -11,19 +11,25 @@ import java.util.ArrayList;
 public class Crossbowman extends Person {
     int arrow;
 
-    public Crossbowman(Integer age, String name, int positionX, int positionY) {
+    public Crossbowman(Integer age,
+                       String name,
+                       int positionX,
+                       int positionY) {
         super(15, 90, 100,
                 80, 50, 30,
-                "Balester", age, name, positionX, positionY);
+                "Balester",
+                age, name, 3,
+                positionX, positionY);
         this.arrow = 10;
     }
 
     @Override
-    public void step(ArrayList<Person> team) {
+    public Person step(ArrayList<Person> team) {
         if (this.health>0 && this.arrow>0) {
             Person opponent = this.searchOpponent(team);
             this.attack(opponent);
             this.arrow--;
+            return opponent;
         }
         else if (this.health==0) {
             System.out.println(this.toString() + " --> Game over");
@@ -31,6 +37,7 @@ public class Crossbowman extends Person {
         else if (this.arrow==0) {
             System.out.println(this.toString() + " --> Стерлы закончились!!!");
         }
+        return null;
     }
 
     @Override
@@ -48,7 +55,9 @@ public class Crossbowman extends Person {
                 + "Позиция X="
                 + this.positionX
                 + " Y="
-                + this.positionY;
+                + this.positionY
+                +" /"
+                +this.speed;
     }
 }
 

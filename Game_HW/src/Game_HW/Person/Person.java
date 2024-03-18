@@ -31,7 +31,9 @@ public abstract class Person implements PersonMethod {
     protected int mana;
     protected String weapon;
     protected int age;
+
     protected String name;
+    public int speed;
     protected int positionX;
     protected int positionY;
 
@@ -44,7 +46,9 @@ public abstract class Person implements PersonMethod {
             int mana,
             String weapon,
             int age,
-            String name, int positionX, int positionY) {
+            String name,
+            int speed,
+            int positionX, int positionY) {
         this.power = power;
         this.skill = skill;
         this.endurance = endurance;
@@ -55,6 +59,7 @@ public abstract class Person implements PersonMethod {
         this.weapon = weapon;
         this.age = age;
         this.name = name;
+        this.speed = speed;
         this.positionX = positionX;
         this.positionY = positionY;
     }
@@ -71,7 +76,9 @@ public abstract class Person implements PersonMethod {
                 + "Позиция X="
                 + this.positionX
                 + " Y="
-                + this.positionY;
+                + this.positionY
+                +" /"
+                +this.speed;
     }
 
     public void attack(Person person) {
