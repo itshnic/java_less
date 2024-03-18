@@ -17,6 +17,7 @@ import java.util.ArrayList;
  * age - возраст игрока
  * weapon - оружие
  * name - имя игрока
+ * speed - инициатива
  * attack() - атака
  * hail() - лечение
  * defense() - защита
@@ -71,14 +72,14 @@ public abstract class Person implements PersonMethod {
                 + " /"
                 + this.age
                 + " лет /"
-                +this.health
+                + this.health
                 + " жизнь /"
                 + "Позиция X="
                 + this.positionX
                 + " Y="
                 + this.positionY
-                +" /"
-                +this.speed;
+                + " /"
+                + this.speed;
     }
 
     public void attack(Person person) {
@@ -103,25 +104,29 @@ public abstract class Person implements PersonMethod {
         return (double) (person.skill + person.endurance + person.armor) / 1000;
     }
 
-    public Person searchOpponent(ArrayList <Person> team) {
-        double minDistance=Math.sqrt(
-                (Math.pow((this.getPositionX()-team.getFirst().getPositionX()),2))
-                        + (Math.pow((this.getPositionY()-team.getFirst().getPositionY()),2)));
-        Person opponent=team.getFirst();
+    public double distance(ArrayList<Person> team, int num) {
+        return Math.sqrt(
+                (Math.pow((this.getPositionX() - team.get(num).getPositionX()), 2))
+                        + (Math.pow((this.getPositionY() - team.get(num).getPositionY()), 2)));
+    }
 
-        for (int i=1;i<team.size();i++) {
-            double distance = Math.sqrt(
-                    (Math.pow((this.getPositionX() -team.get(i).getPositionX()),2))
-                            + (Math.pow((this.getPositionY() - team.get(i).getPositionY()),2)));
-            if(minDistance>distance){
-                minDistance=distance;
-                opponent=team.get(i);
+    public Person searchOpponent(ArrayList<Person> team) {
+        double minDistance = distance(team,0);
+        Person opponent = team.getFirst();
+
+        for (int i = 1; i < team.size(); i++) {
+            double distance = distance(team,i);
+            if (minDistance > distance) {
+                minDistance = distance;
+                opponent = team.get(i);
             }
         }
         return opponent;
     }
 
-    public int getPositionX() {return positionX;}
+    public int getPositionX() {
+        return positionX;
+    }
 
     public int getPositionY() {
         return positionY;

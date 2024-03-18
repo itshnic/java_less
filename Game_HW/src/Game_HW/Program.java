@@ -20,15 +20,15 @@ public class Program {
         whiteTeam.forEach(System.out::println);
         System.out.println();
 
-//        Search search = new Search();
-//        Person gamer = search.searchPerson(blackTeam, "Crossbowman");
-//        Person opponent = gamer.step(whiteTeam);
+        Search search = new Search();
+        Person gamer = search.searchPerson(blackTeam, "Crossbowman");
+        Person opponent = gamer.step(whiteTeam);
 
-//        System.out.println(gamer);
-//        System.out.println();
-//
-//        System.out.println(opponent);
-//        System.out.println();
+        System.out.println(gamer);
+        System.out.println();
+
+        System.out.println(opponent);
+        System.out.println();
 
         ArrayList<Person> allGamers = new ArrayList<>();
         allGamers.addAll(blackTeam);
