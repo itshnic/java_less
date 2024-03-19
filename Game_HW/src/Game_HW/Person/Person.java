@@ -104,18 +104,23 @@ public abstract class Person implements PersonMethod {
         return (double) (person.skill + person.endurance + person.armor) / 1000;
     }
 
-    public double distance(ArrayList<Person> team, int num) {
+    /**
+     * Поиск расстояния между персонажами
+     * @param person - персонаж
+     * @return  расстояние до указанного в аргументе персогнажа
+     */
+    public double distance(Person person) {
         return Math.sqrt(
-                (Math.pow((this.getPositionX() - team.get(num).getPositionX()), 2))
-                        + (Math.pow((this.getPositionY() - team.get(num).getPositionY()), 2)));
+                (Math.pow((this.getPositionX() - person.getPositionX()), 2))
+                        + (Math.pow((this.getPositionY() - person.getPositionY()), 2)));
     }
 
     public Person searchOpponent(ArrayList<Person> team) {
-        double minDistance = distance(team,0);
+        double minDistance = distance(team.getFirst());
         Person opponent = team.getFirst();
 
         for (int i = 1; i < team.size(); i++) {
-            double distance = distance(team,i);
+            double distance = distance(team.get(i));
             if (minDistance > distance) {
                 minDistance = distance;
                 opponent = team.get(i);
