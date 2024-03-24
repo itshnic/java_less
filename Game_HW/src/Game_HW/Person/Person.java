@@ -3,6 +3,8 @@ package Game_HW.Person;
 import Game_HW.Game_start.PersonMethod;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 
 /**
@@ -37,6 +39,22 @@ public abstract class Person implements PersonMethod {
     public int speed;
     protected int positionX;
     protected int positionY;
+
+    public int getPositionX() {
+        return positionX;
+    }
+
+    public int getPositionY() {
+        return positionY;
+    }
+
+    public void setPositionX(int positionX) {
+        this.positionX = positionX;
+    }
+
+    public void setPositionY(int positionY) {
+        this.positionY = positionY;
+    }
 
     public Person(
             int power,
@@ -82,6 +100,11 @@ public abstract class Person implements PersonMethod {
                 + this.speed;
     }
 
+    /**
+     * Атака
+     *
+     * @param person
+     */
     public void attack(Person person) {
         int lightBlow = (int) (this.power - this.power * defense(person));
         int charHealht = person.health;
@@ -89,6 +112,11 @@ public abstract class Person implements PersonMethod {
         System.out.println(this.getClass().getSimpleName() + " атакует " + person.getClass().getSimpleName() + " нанесен урон -> " + (charHealht - person.health));
     }
 
+    /**
+     * Востановление здоровья за счет mana
+     *
+     * @param person
+     */
     public void hail(Person person) {
         if (this.mana >= 10) {
             person.health += (int) (this.mana * 0.1);
@@ -100,40 +128,14 @@ public abstract class Person implements PersonMethod {
 
     }
 
+    /**
+     * Защита от повреждений при атаке соперника - снижает силу удара
+     *
+     * @param person
+     * @return
+     */
     public double defense(Person person) {
         return (double) (person.skill + person.endurance + person.armor) / 1000;
     }
 
-    /**
-     * Поиск расстояния между персонажами
-     * @param person - персонаж
-     * @return  расстояние до указанного в аргументе персогнажа
-     */
-    public double distance(Person person) {
-        return Math.sqrt(
-                (Math.pow((this.getPositionX() - person.getPositionX()), 2))
-                        + (Math.pow((this.getPositionY() - person.getPositionY()), 2)));
-    }
-
-    public Person searchOpponent(ArrayList<Person> team) {
-        double minDistance = distance(team.getFirst());
-        Person opponent = team.getFirst();
-
-        for (int i = 1; i < team.size(); i++) {
-            double distance = distance(team.get(i));
-            if (minDistance > distance) {
-                minDistance = distance;
-                opponent = team.get(i);
-            }
-        }
-        return opponent;
-    }
-
-    public int getPositionX() {
-        return positionX;
-    }
-
-    public int getPositionY() {
-        return positionY;
-    }
 }

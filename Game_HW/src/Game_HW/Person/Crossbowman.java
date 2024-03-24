@@ -24,17 +24,16 @@ public class Crossbowman extends Person {
     }
 
     @Override
-    public Person step(ArrayList<Person> team) {
-        if (this.health>0 && this.arrow>0) {
-            Person opponent = this.searchOpponent(team);
+    public Person step(ArrayList<Person> opponentTeam, ArrayList<Person> myTeam) {
+        if (this.health > 0 && this.arrow > 0) {
+            Search search = new Search();
+            Person opponent = search.searchOpponent(opponentTeam,this.positionX,this.positionY);
             this.attack(opponent);
             this.arrow--;
             return opponent;
-        }
-        else if (this.health==0) {
+        } else if (this.health == 0) {
             System.out.println(this.toString() + " --> Game over");
-        }
-        else if (this.arrow==0) {
+        } else if (this.arrow == 0) {
             System.out.println(this.toString() + " --> Стерлы закончились!!!");
         }
         return null;
@@ -48,16 +47,16 @@ public class Crossbowman extends Person {
                 + " /"
                 + this.age
                 + " лет /"
-                +this.health
+                + this.health
                 + " жизнь /"
-                +this.arrow
-                +" стрел /"
+                + this.arrow
+                + " стрел /"
                 + "Позиция X="
                 + this.positionX
                 + " Y="
                 + this.positionY
-                +" /"
-                +this.speed;
+                + " /"
+                + this.speed;
     }
 }
 

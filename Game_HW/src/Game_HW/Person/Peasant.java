@@ -19,7 +19,7 @@ public class Peasant extends Person {
     }
 
     @Override
-    public Person step(ArrayList<Person> team) {
+    public Person step(ArrayList<Person> opponentTeam,ArrayList<Person> myTeam) {
         return null;
     }
 }
