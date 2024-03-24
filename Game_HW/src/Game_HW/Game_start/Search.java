@@ -8,6 +8,12 @@ import java.util.ArrayList;
  * Поиск игрока в команде
  */
 public class Search {
+    /**
+     * Поиск персонажа в команде по его имени
+     * @param team
+     * @param name
+     * @return
+     */
     public Person searchPerson(ArrayList<Person> team, String name) {
         Person personName = null;
         for (Person person : team) {

@@ -60,6 +60,13 @@ public class Coordinate {
         return coordinate;
     }
 
+    /**
+     * Проверяем не выйдет-ли игрок за границы поля
+     * @param min минимальная граница коорлинат по оси
+     * @param max максимальная граница коорлинат по осии
+     * @param coordinate переданная координата
+     * @return
+     */
     private boolean checkingBorder(int min, int max, int coordinate) {
         return coordinate >= min && coordinate <= max;
     }
@@ -82,6 +89,13 @@ public class Coordinate {
 
         return newCoord;
     }
+
+    /**
+     * Делаем шаг. Если на пути наш игрок - обходим его делая шаг в сторону
+     * @param opponent противник
+     * @param personMyTeam ближайший игрок моей команды
+     * @param gamer я
+     */
     public void stepUp(Person opponent, Person personMyTeam, Person gamer) {
         LinkedHashMap<String, Integer> newCoordinate = this.newCoordinate(this.difference(opponent));
         if (personMyTeam.getPositionX() == newCoordinate.get("x")
