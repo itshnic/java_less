@@ -3,14 +3,12 @@ package Game_HW.Game_start;
 import Game_HW.Person.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Random;
 
 
 public class Teams {
-    public ArrayList<Person> createTeam(int countUser, int step, int positionY) {
-        ArrayList<Person> team = new ArrayList<>();
+    public static ArrayList<Person> createTeam(int countUser, int step, int positionY) {
+         ArrayList<Person> team = new ArrayList<>();
         for (int i = 0; i < countUser; i++) {
             var gamer = Names.values()[new Random().nextInt(Names.values().length)];
             switch (new Random().nextInt(4)+step) {
