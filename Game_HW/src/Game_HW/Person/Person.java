@@ -138,4 +138,10 @@ public abstract class Person implements PersonMethod {
         return (double) (person.skill + person.endurance + person.armor) / 1000;
     }
 
+    public int getHealth() {
+        return health;
+    }
+    public String getInfo() {
+        return this.getClass().getSimpleName();
+    }
 }
