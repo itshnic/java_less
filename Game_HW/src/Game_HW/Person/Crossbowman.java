@@ -27,7 +27,7 @@ public class Crossbowman extends Person {
     public Person step(ArrayList<Person> opponentTeam, ArrayList<Person> myTeam) {
         if (this.health > 0 && this.arrow > 0) {
             Search search = new Search();
-            Person opponent = search.searchOpponent(opponentTeam,this.positionX,this.positionY);
+            Person opponent = search.searchOpponent(opponentTeam,this);
             this.attack(opponent);
             this.arrow--;
             return opponent;

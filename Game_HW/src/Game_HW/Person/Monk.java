@@ -27,14 +27,15 @@ public class Monk extends Person {
             Search search = new Search();
             int x = this.positionX;
             int y = this.positionY;
-            Person opponent = search.searchOpponent(opponentTeam,x,y);
+            ArrayList<Person> listGamerNear = search.searchGamer(opponentTeam,this);
+            Person opponent = listGamerNear.getFirst();
             Coordinate myCoord = new Coordinate(x,y);
             double distanceOpponent = myCoord.distance(opponent);
 
             if (distanceOpponent >= 1 && distanceOpponent < 1.5)
                 this.attack(opponent);
             else {
-                myCoord.stepUp(opponent, search.searchOpponent(myTeam, x, y),this);
+                myCoord.stepUp(opponent, search.searchGamer(myTeam, this),this);
                 System.out.println("Сделал ход: " + this);
             }
         } else System.out.println("Game over health = " + health);

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Search {
     /**
      * Поиск персонажа в команде по его имени
+     *
      * @param team
      * @param name
      * @return
@@ -25,23 +26,27 @@ public class Search {
     }
 
     /**
-     * Поиск ближайшего соперника
+     * Поиск ближайшего игрока
      *
-     * @param team - команда соперников
-     * @return - соперник
+     * @param team - команда
+     * @return - список игроков с одинаковой дистанцией
      */
-    public Person searchOpponent(ArrayList<Person> team, int x, int y) {
-        Person opponent = team.getFirst();
-        Coordinate coord = new Coordinate(x,y);
-        double minDistance = coord.distance(team.getFirst());
+    public ArrayList<Person> searchGamer(ArrayList<Person> team, Person gamer) {
+        ArrayList<Person> listGamerNear= new ArrayList<>();
+        Person gamerNear = gamer;
+        Coordinate coord = new Coordinate(gamer.getPositionX(), gamer.getPositionY());
+        double minDistance = 100;
 
-        for (int i = 1; i < team.size(); i++) {
+        for (int i = 0; i < team.size(); i++) {
             double distance = coord.distance(team.get(i));
-            if (minDistance > distance) {
+            if(distance==1) listGamerNear.add(team.get(i));
+            else if (minDistance > distance && distance > 0)
+             {
                 minDistance = distance;
-                opponent = team.get(i);
+                 gamerNear = team.get(i);
             }
         }
-        return opponent;
+
+        return listGamerNear.add(gamerNear);
     }
 }
