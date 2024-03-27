@@ -20,23 +20,21 @@ public class Crossbowman extends Person {
                 "Balester",
                 age, name, 3,
                 positionX, positionY);
-        this.arrow = 10;
+        this.arrow = 120;
     }
 
     @Override
-    public Person step(ArrayList<Person> opponentTeam, ArrayList<Person> myTeam) {
+    public void step(ArrayList<Person> opponentTeam, ArrayList<Person> myTeam) {
         if (this.health > 0 && this.arrow > 0) {
             Search search = new Search();
             Person opponent = search.searchOpponent(opponentTeam,this.positionX,this.positionY);
             this.attack(opponent);
             this.arrow--;
-            return opponent;
         } else if (this.health == 0) {
             System.out.println(this.toString() + " --> Game over");
         } else if (this.arrow == 0) {
             System.out.println(this.toString() + " --> Стерлы закончились!!!");
         }
-        return null;
     }
 
     @Override

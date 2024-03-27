@@ -3,6 +3,8 @@ package Game_HW.Game_start;
 import Game_HW.Person.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 
@@ -45,15 +47,23 @@ public class Teams {
         }
         return summ != 0;
     }
-    private void message (String name_1,String name_2) {
-        System.out.println(name_1 + " GAME OVER!!!");
-        System.out.println(name_2 + " Winning Team!!!");
+    private void message (HashMap<String,ArrayList<Person>> teams,String name) {
+        for (Map.Entry<String,ArrayList<Person>> entry : teams.entrySet()){
+            System.out.println();
+            if (entry.getKey().equals(name))
+                System.out.println(name + " GAME OVER!!!");
+            else System.out.println(entry.getKey() + " Winning Team!!!");
+        }
+
     }
 
-    public boolean victory(ArrayList<Person> team_1, ArrayList<Person> team_2) {
-        if (!getTeamKilled(team_1)) {
-            message(team_1.getClass().getSimpleName(),team_2.getClass().getSimpleName());
+    public boolean victory(HashMap<String,ArrayList<Person>> teams) {
+        for (Map.Entry<String,ArrayList<Person>> entry : teams.entrySet()){
+            if (!getTeamKilled(entry.getValue())) {
+                message(teams,entry.getKey());
+                return false;
+            }
         }
-        return getTeamKilled(team_1);
+        return true;
     }
 }

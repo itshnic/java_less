@@ -18,7 +18,7 @@ public class Sorcerer extends Person {
     }
 
     @Override
-    public Person step(ArrayList<Person> opponentTeam,ArrayList<Person> myTeam) {
-        return null;
+    public void step(ArrayList<Person> opponentTeam,ArrayList<Person> myTeam) {
+        return;
     }
 }

@@ -37,7 +37,7 @@ public class Search {
 
         for (int i = 1; i < team.size(); i++) {
             double distance = coord.distance(team.get(i));
-            if (minDistance > distance) {
+            if (minDistance > distance&&team.get(i).getHealth()>0) {
                 minDistance = distance;
                 opponent = team.get(i);
             }

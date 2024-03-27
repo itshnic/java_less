@@ -128,7 +128,6 @@ public abstract class Person implements PersonMethod {
             System.out.println("Запас здоровья " + person.getClass().getSimpleName() + " -> " + person.health);
             System.out.println(this.getClass().getSimpleName() + " осталось Mana -> " + this.mana);
         } else System.out.println(this.getClass().getSimpleName() + " Лечить нельзя Mana -> " + this.mana);
-
     }
 
     /**
