@@ -15,23 +15,22 @@ public class Program {
     public static ArrayList<Person> allGamers = new ArrayList<>();
 
     public static void main(String[] args) {
-
-        blackTeam = Teams.createTeam(10, 0, 0);
-        whiteTeam = Teams.createTeam(10, 3, 9);
+        Teams teams = new Teams();
+        blackTeam = teams.createTeam(10, 0, 0);
+        whiteTeam = teams.createTeam(10, 3, 9);
         allGamers.addAll(blackTeam);
         allGamers.addAll(whiteTeam);
-        allGamers.sort(((o1, o2) -> o2.speed- o1.speed));
+        allGamers.sort(((o1, o2) -> o2.speed - o1.speed));
 
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
+        while (teams.victory(blackTeam,whiteTeam)&&teams.victory(whiteTeam,blackTeam)) {
             View.view();
             scanner.nextLine();
-            for (Person person: allGamers) {
-                if(whiteTeam.contains(person)){
+            for (Person person : allGamers) {
+                if (whiteTeam.contains(person)) {
                     person.step(blackTeam, whiteTeam);
-                }
-                else person.step(whiteTeam,blackTeam);
+                } else person.step(whiteTeam, blackTeam);
             }
 
         }
@@ -58,8 +57,6 @@ public class Program {
 
 //        Monk.step(whiteTeam,blackTeam);
 //        Crossbowman.step(whiteTeam,blackTeam);
-
-
 
 
 //        allGamers.sort(((o1, o2) -> o2.speed- o1.speed));

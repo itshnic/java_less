@@ -108,7 +108,10 @@ public abstract class Person implements PersonMethod {
     public void attack(Person person) {
         int lightBlow = (int) (this.power - this.power * defense(person));
         int charHealht = person.health;
-        person.health -= lightBlow;
+
+        if ((person.health -= lightBlow) < 0)
+            person.health = 0;
+
         System.out.println(this.getClass().getSimpleName() + " атакует " + person.getClass().getSimpleName() + " нанесен урон -> " + (charHealht - person.health));
     }
 
@@ -141,6 +144,7 @@ public abstract class Person implements PersonMethod {
     public int getHealth() {
         return health;
     }
+
     public String getInfo() {
         return this.getClass().getSimpleName();
     }
