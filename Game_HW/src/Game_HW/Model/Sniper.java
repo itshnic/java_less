@@ -1,6 +1,6 @@
-package Game_HW.Person;
+package Game_HW.Model;
 
-import Game_HW.Game_start.Search;
+import Game_HW.Presenter.Search;
 
 import java.util.ArrayList;
 

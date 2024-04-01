@@ -1,6 +1,7 @@
-package Game_HW.Game_start;
+package Game_HW.Presenter;
 
-import Game_HW.Person.*;
+import Game_HW.Model.*;
+import Game_HW.View.View;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,23 +48,16 @@ public class Teams {
         }
         return summ != 0;
     }
-    private void message (HashMap<String,ArrayList<Person>> teams,String name) {
-        for (Map.Entry<String,ArrayList<Person>> entry : teams.entrySet()){
-            System.out.println();
-            if (entry.getKey().equals(name))
-                System.out.println(name + " GAME OVER!!!");
-            else System.out.println(entry.getKey() + " Winning Team!!!");
-        }
 
-    }
 
     public boolean victory(HashMap<String,ArrayList<Person>> teams) {
         for (Map.Entry<String,ArrayList<Person>> entry : teams.entrySet()){
             if (!getTeamKilled(entry.getValue())) {
-                message(teams,entry.getKey());
+                new View().messageToWinner(teams,entry.getKey());
                 return false;
             }
         }
         return true;
     }
+
 }

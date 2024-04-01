@@ -1,4 +1,4 @@
-package Game_HW.Game_start;
+package Game_HW.Presenter;
 
 public enum Names {
     gamer1("Роман", 32),

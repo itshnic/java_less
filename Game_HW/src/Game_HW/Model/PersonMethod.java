@@ -1,6 +1,4 @@
-package Game_HW.Game_start;
-
-import Game_HW.Person.Person;
+package Game_HW.Model;
 
 import java.util.ArrayList;
 

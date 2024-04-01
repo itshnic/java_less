@@ -1,4 +1,4 @@
-package Game_HW.Person;
+package Game_HW.Model;
 
 import java.util.ArrayList;
 

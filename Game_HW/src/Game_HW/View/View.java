@@ -1,9 +1,13 @@
-package Game_HW.Game_start;
+package Game_HW.View;
 
-import Game_HW.Person.Person;
+import Game_HW.Model.Person;
+import Game_HW.Presenter.AnsiColors;
 import Game_HW.Program;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public class View {
     private static int step = 1;
@@ -97,6 +101,44 @@ public class View {
         tabSetter(Program.whiteTeam.get(9).toString().length(), l);
         System.out.println(Program.blackTeam.get(9));
         System.out.println(bottom10);
+    }
+    public void messageToWinner (HashMap<String, ArrayList<Person>> teams, String name) {
+        for (Map.Entry<String,ArrayList<Person>> entry : teams.entrySet()){
+            System.out.println();
+            if (entry.getKey().equals(name))
+                System.out.println(name + " GAME OVER!!!");
+            else System.out.println(entry.getKey() + " Winning Team!!!");
+        }
+    }
+    public void getInfo(Person person_1,Person person_2,String action, int count) {
+        switch (action) {
+            case "Ход":
+                System.out.println(person_1 + " Ходит");
+                break;
+            case "Атака":
+                System.out.println(person_1.toString()
+                        + " атакует " + person_2.toString()
+                        + " нанесен урон -> " + count);
+                break;
+            case "Лечение":
+                System.out.println(person_1.toString() + " вылечил -> " + person_2.toString());
+                break;
+            case "Возрождение":
+                System.out.println(person_1.toString() + " Возродил -> " + person_2.toString());
+                break;
+            case "Погиб":
+                System.out.println(person_1.toString() + " Погиб");
+                break;
+            case "Пополнил БК":
+                System.out.println(person_2.toString() + " Передал боеприпасы");
+                System.out.println(person_1.toString() + " Пополнил БК");
+                break;
+            case "Пополнение-mana":
+                System.out.println(person_1.toString()
+                        + " Пополненил-mana "
+                        + " + " + count);
+                break;
+        }
     }
 }
 

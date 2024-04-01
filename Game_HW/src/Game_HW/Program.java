@@ -1,10 +1,8 @@
 package Game_HW;
 
-import Game_HW.Game_start.Coordinate;
-import Game_HW.Game_start.Search;
-import Game_HW.Game_start.Teams;
-import Game_HW.Game_start.View;
-import Game_HW.Person.*;
+import Game_HW.Model.Person;
+import Game_HW.Presenter.Teams;
+import Game_HW.View.View;
 
 import java.util.ArrayList;
 import java.util.HashMap;

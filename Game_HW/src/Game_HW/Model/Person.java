@@ -1,11 +1,7 @@
-package Game_HW.Person;
+package Game_HW.Model;
 
-import Game_HW.Game_start.PersonMethod;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-
+import Game_HW.View.View;
 
 /**
  * Шкала от 0 до 100
@@ -102,32 +98,14 @@ public abstract class Person implements PersonMethod {
 
     /**
      * Атака
+     * impactForce - сила удара
      *
      * @param person
      */
     public void attack(Person person) {
-        int lightBlow = (int) (this.power - this.power * defense(person));
-        int charHealht = person.health;
-
-        if ((person.health -= lightBlow) < 0)
+        int impactForce = (int) (this.power - this.power * defense(person));
+        if ((person.health -= impactForce) < 0)
             person.health = 0;
-
-        System.out.println(this.getClass().getSimpleName() + " атакует " + person.getClass().getSimpleName() + " нанесен урон -> " + (charHealht - person.health));
-    }
-
-    /**
-     * Востановление здоровья за счет mana
-     *
-     * @param person
-     */
-    public void hail(Person person) {
-        if (this.mana >= 10) {
-            person.health += (int) (this.mana * 0.1);
-            this.mana -= (int) (this.mana * 0.1);
-            System.out.println(this.getClass().getSimpleName() + " вылечил -> " + person.getClass().getSimpleName());
-            System.out.println("Запас здоровья " + person.getClass().getSimpleName() + " -> " + person.health);
-            System.out.println(this.getClass().getSimpleName() + " осталось Mana -> " + this.mana);
-        } else System.out.println(this.getClass().getSimpleName() + " Лечить нельзя Mana -> " + this.mana);
     }
 
     /**

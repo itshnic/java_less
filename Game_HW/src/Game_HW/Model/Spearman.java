@@ -1,23 +1,23 @@
-package Game_HW.Person;
+package Game_HW.Model;
 
-import Game_HW.Game_start.Coordinate;
-import Game_HW.Game_start.Search;
+import Game_HW.Presenter.Coordinate;
+import Game_HW.Presenter.Search;
 
 import java.util.ArrayList;
 
 /**
- * Грабитель
- * musket - мушкет
+ * Копейщик
+ * Spear - копье
  */
-public class Robber extends Person {
-    public Robber( int age,
-                   String name,
-                   int positionX,
-                   int positionY) {
-        super(17, 50, 50,
-                50, 10, 15,
-                "musket", age, name,2,
-                positionX,positionY);
+public class Spearman extends Person {
+    public Spearman(int age,
+                    String name,
+                    int positionX,
+                    int positionY) {
+        super(12, 60, 50,
+                50, 45, 25,
+                "Spear", age, name, 2,
+                positionX, positionY);
     }
 
     @Override
@@ -37,6 +37,5 @@ public class Robber extends Person {
                 System.out.println("Сделал ход: " + this.toString());
             }
         } else System.out.println(this.toString() + " --> Game over");
-
     }
 }
