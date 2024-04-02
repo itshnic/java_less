@@ -112,9 +112,6 @@ public class View {
     }
     public void getInfo(Person person_1,Person person_2,String action, int count) {
         switch (action) {
-            case "Ход":
-                System.out.println(person_1 + " Ходит");
-                break;
             case "Атака":
                 System.out.println(person_1.toString()
                         + " атакует " + person_2.toString()
@@ -126,9 +123,6 @@ public class View {
             case "Возрождение":
                 System.out.println(person_1.toString() + " Возродил -> " + person_2.toString());
                 break;
-            case "Погиб":
-                System.out.println(person_1.toString() + " Погиб");
-                break;
             case "Пополнил БК":
                 System.out.println(person_2.toString() + " Передал боеприпасы");
                 System.out.println(person_1.toString() + " Пополнил БК");
@@ -137,6 +131,11 @@ public class View {
                 System.out.println(person_1.toString()
                         + " Пополненил-mana "
                         + " + " + count);
+                break;
+            default:
+                System.out.println(person_1.toString()
+                        + " "
+                        + action);
                 break;
         }
     }

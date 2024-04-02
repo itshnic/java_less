@@ -1,4 +1,6 @@
-package Game_HW.Model;
+package Game_HW.Presenter.Person;
+
+import Game_HW.Model.Person;
 
 import java.util.ArrayList;
 
@@ -19,21 +21,22 @@ public class Monk extends Person {
                 positionX, positionY);
     }
 
+
     @Override
     public void step(ArrayList<Person> opponentTeam,ArrayList<Person> myTeam) {
         return;
     }
+    /**
+     * Востановление здоровья за счет mana
+     *
+     * @param person
+     */
+    public void hail(Person person) {
+        if (this.mana >= 10) {
+            person.health += (int) (this.mana * 0.1);
+            this.mana -= (int) (this.mana * 0.1);
 
-}
-/**
- * Востановление здоровья за счет mana
- *
- * @param person
- */
-public void hail(Person person) {
-    if (this.mana >= 10) {
-        person.health += (int) (this.mana * 0.1);
-        this.mana -= (int) (this.mana * 0.1);
+        } else System.out.println(this.getClass().getSimpleName() + " Лечить нельзя Mana -> " + this.mana);
+    }
 
-    } else System.out.println(this.getClass().getSimpleName() + " Лечить нельзя Mana -> " + this.mana);
 }

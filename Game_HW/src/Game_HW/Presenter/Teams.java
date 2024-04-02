@@ -1,6 +1,7 @@
 package Game_HW.Presenter;
 
 import Game_HW.Model.*;
+import Game_HW.Presenter.Person.*;
 import Game_HW.View.View;
 
 import java.util.ArrayList;
