@@ -110,30 +110,38 @@ public class View {
             else System.out.println(entry.getKey() + " Winning Team!!!");
         }
     }
+
+    /**
+     * Вывод информации о действии ИГРОКА
+     * @param person_1 Игрок
+     * @param person_2 Противник /Игрок своей команды
+     * @param action Атака /Лечение /Возрождение /Пополнил БК /Пополнение-mana или default - произвольное действие
+     * @param count здоровье /запас БК /mana /урон
+     */
     public void getInfo(Person person_1,Person person_2,String action, int count) {
         switch (action) {
             case "Атака":
-                System.out.println(person_1.toString()
-                        + " атакует " + person_2.toString()
+                System.out.println(person_1
+                        + " атакует " + person_2
                         + " нанесен урон -> " + count);
                 break;
             case "Лечение":
-                System.out.println(person_1.toString() + " вылечил -> " + person_2.toString());
+                System.out.println(person_1 + " вылечил -> " + person_2);
                 break;
             case "Возрождение":
-                System.out.println(person_1.toString() + " Возродил -> " + person_2.toString());
+                System.out.println(person_1 + " Возродил -> " + person_2);
                 break;
             case "Пополнил БК":
-                System.out.println(person_2.toString() + " Передал боеприпасы");
-                System.out.println(person_1.toString() + " Пополнил БК");
+                System.out.println(person_2 + " Передал боеприпасы");
+                System.out.println(person_1 + " Пополнил БК");
                 break;
             case "Пополнение-mana":
-                System.out.println(person_1.toString()
+                System.out.println(person_1
                         + " Пополненил-mana "
                         + " + " + count);
                 break;
             default:
-                System.out.println(person_1.toString()
+                System.out.println(person_1
                         + " "
                         + action);
                 break;

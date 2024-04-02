@@ -44,4 +44,21 @@ public class Search {
         }
         return opponent;
     }
+
+    /**
+     * Поиск игроков по Именам персонажей
+     * @param team - команда
+     * @param listName - список имен
+     * @return список игроков
+     */
+    public ArrayList<Person> getPersonMyTeam(ArrayList<Person> team, ArrayList<String> listName) {
+        ArrayList<Person> filter = new ArrayList<>();
+        for (Person person : team) {
+            for (String name : listName) {
+                if (person.getClass().getSimpleName().equals(name))
+                    filter.add(person);
+            }
+        }
+        return filter;
+    }
 }

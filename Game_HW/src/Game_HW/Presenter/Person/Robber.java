@@ -3,12 +3,13 @@ package Game_HW.Presenter.Person;
 import Game_HW.Model.Person;
 import Game_HW.Presenter.Coordinate;
 import Game_HW.Presenter.Search;
+import Game_HW.View.View;
 
 import java.util.ArrayList;
 
 /**
  * Грабитель
- * musket - мушкет
+ * saber - сабля
  */
 public class Robber extends Person {
     public Robber( int age,
@@ -17,27 +18,26 @@ public class Robber extends Person {
                    int positionY) {
         super(17, 50, 50,
                 50, 10, 15,
-                "musket", age, name,2,
+                "saber", age, name,2,
                 positionX,positionY);
     }
 
     @Override
     public void step(ArrayList<Person> opponentTeam, ArrayList<Person> myTeam) {
         if (health > 0) {
-            Search search = new Search();
             int x = this.positionX;
             int y = this.positionY;
-            Person opponent = search.searchOpponent(opponentTeam,x,y);
+            Person opponent = new Search().searchOpponent(opponentTeam,x,y);
             Coordinate myCoord = new Coordinate(x,y);
             double distanceOpponent = myCoord.distance(opponent);
 
             if (distanceOpponent >= 1 && distanceOpponent < 1.5)
-                this.attack(opponent);
+                new View().getInfo(this,opponent," Атака", this.attack(opponent));
             else {
-                myCoord.stepUp(opponent, search.searchOpponent(myTeam, x, y),this);
-                System.out.println("Сделал ход: " + this.toString());
+                myCoord.stepUp(opponent, new Search().searchOpponent(myTeam, x, y),this);
+                new View().getInfo(this,null," Ходит", 0);
             }
-        } else System.out.println(this.toString() + " --> Game over");
+        } else new View().getInfo(this,null," Убит", 0);
 
     }
 }

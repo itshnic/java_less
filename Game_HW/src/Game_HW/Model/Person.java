@@ -98,14 +98,15 @@ public abstract class Person implements PersonMethod {
 
     /**
      * Атака
-     * impactForce - сила удара
-     *
+     * impactForce - сила удара /урон
      * @param person
+     * return - урон
      */
-    public void attack(Person person) {
+    public Integer attack(Person person) {
         int impactForce = (int) (this.power - this.power * defense(person));
         if ((person.health -= impactForce) < 0)
             person.health = 0;
+        return impactForce;
     }
 
     /**
