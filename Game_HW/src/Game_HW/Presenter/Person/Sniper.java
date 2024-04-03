@@ -29,7 +29,7 @@ public class Sniper extends Person {
     public void step(ArrayList<Person> opponentTeam, ArrayList<Person> myTeam) {
         if (this.health > 0 && this.shot > 0) {
             Person opponent = new Search().searchOpponent(opponentTeam,this.positionX,this.positionY);
-            new View().getInfo(this,opponent," Атака", this.attack(opponent));
+            new View().getInfo(this,opponent,"Атака", this.attack(opponent));
             this.shot--;
         } else if (this.health == 0) {
             new View().getInfo(this,null," Убит", 0);

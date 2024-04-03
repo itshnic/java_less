@@ -35,12 +35,12 @@ public class Peasant extends Person {
             Person opponent = new Search().searchOpponent(opponentTeam, x, y);
             Coordinate myCoord = new Coordinate(x, y);
             double distanceOpponent = myCoord.distance(opponent);
-            ArrayList<Person> myTeamPerson = new Search().getPersonMyTeam(myTeam, new ArrayList<>(Arrays.asList("Crossbowman", "Sniper")));
+            ArrayList<Person> myTeamPerson = new Search().searchPersonByName(myTeam, new ArrayList<>(Arrays.asList("Crossbowman", "Sniper")));
 
             if (distanceOpponent >= 1 && distanceOpponent < 1.5)
-                new View().getInfo(this, opponent, " Атака", this.attack(opponent));
+                new View().getInfo(this, opponent, "Атака", this.attack(opponent));
             else if (!myTeamPerson.isEmpty()) {
-                new View().getInfo(this,myTeamPerson.get(new Random().nextInt(myTeamPerson.size())) , "Пополнил БК", 0);
+                new View().getInfo(myTeamPerson.get(new Random().nextInt(myTeamPerson.size())) ,this, "Пополнил БК", 0);
             }
         } else new View().getInfo(this, null, " Убит", 0);
 

@@ -46,13 +46,13 @@ public class View {
         for (Person human : Program.allGamers) {
             if (human.getPositionX() == x && human.getPositionY() == y) {
                 if (human.getHealth()== 0) {
-                    out = "|" + (AnsiColors.ANSI_RED + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                    out = "|" + (AnsiColors.ANSI_RED + human.getPersonName().charAt(0) + AnsiColors.ANSI_RESET);
                     break;
                 }
                 if (Program.blackTeam.contains(human))
-                    out = "|" + (AnsiColors.ANSI_GREEN + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                    out = "|" + (AnsiColors.ANSI_GREEN + human.getPersonName().charAt(0) + AnsiColors.ANSI_RESET);
                 if (Program.whiteTeam.contains(human))
-                    out = "|" + (AnsiColors.ANSI_BLUE + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                    out = "|" + (AnsiColors.ANSI_BLUE + human.getPersonName().charAt(0) + AnsiColors.ANSI_RESET);
                 break;
             }
         }

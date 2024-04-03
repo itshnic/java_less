@@ -34,7 +34,7 @@ public class Spearman extends Person {
             double distanceOpponent = myCoord.distance(opponent);
 
             if (distanceOpponent >= 1 && distanceOpponent < 1.5) {
-                new View().getInfo(this, opponent, " Атака", this.attack(opponent));
+                new View().getInfo(this, opponent, "Атака", this.attack(opponent));
                 this.spears--;
             }
             else {

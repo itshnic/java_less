@@ -32,7 +32,7 @@ public class Robber extends Person {
             double distanceOpponent = myCoord.distance(opponent);
 
             if (distanceOpponent >= 1 && distanceOpponent < 1.5)
-                new View().getInfo(this,opponent," Атака", this.attack(opponent));
+                new View().getInfo(this,opponent,"Атака", this.attack(opponent));
             else {
                 myCoord.stepUp(opponent, new Search().searchOpponent(myTeam, x, y),this);
                 new View().getInfo(this,null," Ходит", 0);

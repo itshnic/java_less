@@ -1,6 +1,7 @@
 package Game_HW.Presenter;
 
 import Game_HW.Model.Person;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
@@ -15,6 +16,7 @@ public class Coordinate {
 
     /**
      * Поиск расстояния между персонажами
+     *
      * @param person - персонаж
      * @return расстояние до указанного в аргументе персогнажа
      */
@@ -23,8 +25,10 @@ public class Coordinate {
                 (Math.pow((this.positionX - person.getPositionX()), 2))
                         + (Math.pow((this.positionY - person.getPositionY()), 2)));
     }
+
     /**
      * Разница координат между игроками
+     *
      * @param person - ближайший игрок
      * @return разница координат (в списке)
      */
@@ -51,8 +55,7 @@ public class Coordinate {
             if (diffCoordinate > 0) {
                 coordinate--;
                 break;
-            }
-            else if (diffCoordinate < 0) {
+            } else if (diffCoordinate < 0) {
                 coordinate++;
                 break;
             }
@@ -62,8 +65,9 @@ public class Coordinate {
 
     /**
      * Проверяем не выйдет-ли игрок за границы поля
-     * @param min минимальная граница коорлинат по оси
-     * @param max максимальная граница коорлинат по осии
+     *
+     * @param min        минимальная граница коорлинат по оси
+     * @param max        максимальная граница коорлинат по осии
      * @param coordinate переданная координата
      * @return
      */
@@ -92,19 +96,20 @@ public class Coordinate {
 
     /**
      * Делаем шаг. Если на пути наш игрок - обходим его делая шаг в сторону
-     * @param opponent противник
+     *
+     * @param opponent     противник
      * @param personMyTeam ближайший игрок моей команды
-     * @param gamer я
+     * @param gamer        я
      */
     public void stepUp(Person opponent, Person personMyTeam, Person gamer) {
         LinkedHashMap<String, Integer> newCoordinate = this.newCoordinate(this.difference(opponent));
         if (personMyTeam.getPositionX() == newCoordinate.get("x")
-                && personMyTeam.getPositionY() == newCoordinate.get("y")) {
+                && personMyTeam.getPositionY() == newCoordinate.get("y") && personMyTeam.getHealth() > 0) {
             String key = newCoordinate.lastEntry().getKey();
             Integer value = newCoordinate.lastEntry().getValue();
-            value = checkingBorder(0,  9,value+1)
-                    ?value++:value--;
-            newCoordinate.replace(key,value);
+            value = checkingBorder(0, 9, value + 1)
+                    ? value++ : value--;
+            newCoordinate.replace(key, value);
 
         } else {
             gamer.setPositionX(newCoordinate.get("x"));

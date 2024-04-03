@@ -35,6 +35,7 @@ public abstract class Person implements PersonMethod {
     public int speed;
     protected int positionX;
     protected int positionY;
+    public boolean flag;
 
     public int getPositionX() {
         return positionX;
@@ -52,6 +53,21 @@ public abstract class Person implements PersonMethod {
         this.positionY = positionY;
     }
 
+    public void setHealth(int health) {
+        this.health = health;
+    }
+    public int getHealth() {
+        return health;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
     public Person(
             int power,
             int skill,
@@ -63,7 +79,8 @@ public abstract class Person implements PersonMethod {
             int age,
             String name,
             int speed,
-            int positionX, int positionY) {
+            int positionX,
+            int positionY) {
         this.power = power;
         this.skill = skill;
         this.endurance = endurance;
@@ -77,6 +94,7 @@ public abstract class Person implements PersonMethod {
         this.speed = speed;
         this.positionX = positionX;
         this.positionY = positionY;
+        this.flag = false;
     }
 
     public String toString() {
@@ -99,8 +117,8 @@ public abstract class Person implements PersonMethod {
     /**
      * Атака
      * impactForce - сила удара /урон
-     * @param person
-     * return - урон
+     *
+     * @param person return - урон
      */
     public Integer attack(Person person) {
         int impactForce = (int) (this.power - this.power * defense(person));
@@ -116,14 +134,11 @@ public abstract class Person implements PersonMethod {
      * @return
      */
     public double defense(Person person) {
+
         return (double) (person.skill + person.endurance + person.armor) / 1000;
     }
 
-    public int getHealth() {
-        return health;
-    }
-
-    public String getInfo() {
+    public String getPersonName() {
         return this.getClass().getSimpleName();
     }
 }
