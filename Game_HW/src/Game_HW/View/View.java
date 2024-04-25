@@ -146,6 +146,7 @@ public class View {
                         + action);
                 break;
         }
+        System.out.println("-------------------->");
     }
 }
 

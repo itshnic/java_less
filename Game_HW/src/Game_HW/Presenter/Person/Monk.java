@@ -37,7 +37,7 @@ public class Monk extends Person {
             ArrayList<Person> searchPersonByHealth = new Search()
                     .searchPersonByHealth(myTeam, this);
 
-            if (distanceOpponent >= 1 && distanceOpponent < 1.5)
+            if (distanceOpponent >= 1 && distanceOpponent <= 1.5)
                 new View().getInfo(this, opponent, "Атака", this.attack(opponent));
             else if (this.flag
                     && this.mana >= 10

@@ -33,7 +33,6 @@ public class Program {
                     person.step(blackTeam, whiteTeam);
                 } else person.step(whiteTeam, blackTeam);
             }
-
         }
 
     }
