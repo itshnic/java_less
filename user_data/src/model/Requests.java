@@ -8,7 +8,7 @@ public enum Requests {
     request5("месяц рождения",2, 1),
     request6("год рождения",4, 1),
     request7("телефон с кодом страны 8",11, 1),
-    request8("ваш пол f или m",1, 1);
+    request8("ваш пол f (Ж) или m (M)",1, 2);
 
     public final String text;
     public final int number;
