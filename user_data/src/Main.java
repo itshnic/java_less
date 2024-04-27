@@ -8,7 +8,8 @@ public class Main {
     public static void main(String[] args) {
         User user = new CreateUser().create("Введите");
         WriterToFile write = new WriterToFile();
-        write.writeUser(user,"Роман@DESKTOP-KH8DKFJ MINGW64 ~/Desktop/GeekBR/PHP/phpLesson/OpenServer/domains/java_less/user_data/src/BD/");
+        write.writeUser(user,
+                "C:\\Users\\Пользователь\\Desktop\\GeekBR\\PHP\\phpLesson\\OpenServer\\domains\\java_less\\user_data\\src\\BD\\");
 
     }
 }
